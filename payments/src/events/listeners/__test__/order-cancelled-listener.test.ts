@@ -3,7 +3,7 @@ import { Message } from 'node-nats-streaming'
 import { OrderStatus, OrderCancelledEvent } from '@wymaze/common'
 import { OrderCancelledListener } from '../order-cancelled-listener'
 import { natsWrapper } from '../../../nats-wrapper'
-import { Order } from '../../../models/order'
+import { Order } from '../../../models/Order'
 
 const setup = async () => {
   const listener = new OrderCancelledListener(natsWrapper.client)

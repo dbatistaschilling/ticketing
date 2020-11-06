@@ -3,7 +3,7 @@ import { Message } from 'node-nats-streaming'
 import { OrderCreatedEvent, OrderStatus } from '@wymaze/common'
 import { natsWrapper } from '../../../nats-wrapper'
 import { OrderCreatedListener } from '../order-created-listener'
-import { Order } from '../../../models/order'
+import { Order } from '../../../models/Order'
 
 const setup = async () => {
   const listener = new OrderCreatedListener(natsWrapper.client)
