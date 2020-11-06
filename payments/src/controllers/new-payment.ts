@@ -11,15 +11,11 @@ export const newPayment = async (req: Request, res: Response) => {
 
   const order = await Order.findById(orderId)
 
-  if (!order) {
-    console.log('sem ordeeeeeerrrrrr');
-    
+  if (!order) {    
     throw new NotFoundError()
   }
 
-  if (order.userId !== req.currentUser.id) {
-    console.log('usuario erradoooooooo');
-    
+  if (order.userId !== req.currentUser.id) {    
     throw new NotFoundError()
   }
 

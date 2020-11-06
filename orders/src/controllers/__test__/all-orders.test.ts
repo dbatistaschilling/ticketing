@@ -12,13 +12,14 @@ const buildTicket = async () => {
   return ticket
 }
 
-it('Returns a 404 if any order is found', async () => {
-  await request(app)
+it('Returns an empty array if no order is found', async () => {
+  const response = await request(app)
     .get('/api/orders')
     .set('Cookie', globalThis.signUp())
     .send({})
-    .expect(404)
+    .expect(200)
   
+  expect(response.body.length).toEqual(0)
 })
 
 it('Returns a 401 unauthorized if the user is not signed in', async () => {
