@@ -20,11 +20,14 @@ const createPayments = async () => {
   await paymentTwo.save()
 }
 
-it('Returns a 404 if no payment is found', async () => {
-  await request(app)
+it('Returns an empty array if no payment is found', async () => {
+  const response = await request(app)
     .get('/api/payments')
-    .send()
-    .expect(404)
+    .set('Cookie', globalThis.signUp())
+    .send({})
+    .expect(200)
+  
+  expect(response.body.length).toEqual(0)
 })
 
 it('Can fetch a list of payments', async () => {
