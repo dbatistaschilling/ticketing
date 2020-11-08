@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: cd expirations && npm install && npm run build && docker build -t dbatistaschilling/expirations -f Dockerfile.prod .
+      - run: cd expirations && docker build -t dbatistaschilling/expirations -f Dockerfile.prod .
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
