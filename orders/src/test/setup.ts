@@ -1,6 +1,5 @@
 import { MongoMemoryServer } from 'mongodb-memory-server'
 import mongoose from 'mongoose'
-// import {} from 'jasmine'
 import jwt from 'jsonwebtoken'
 
 declare global {
@@ -16,9 +15,6 @@ declare global {
 
 jest.mock('../nats-wrapper.ts')
 let mongo: any
-
-// jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
-// jest.setTimeout(60000)
 
 beforeAll(async () => {
   process.env.JWT_KEY = 'super_secret_key_for_test'
