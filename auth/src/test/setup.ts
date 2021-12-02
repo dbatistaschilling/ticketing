@@ -16,9 +16,6 @@ declare global {
 
 let mongo: any
 
-// jasmine.DEFAULT_TIMEOUT_INTERVAL = 600000;
-// jest.setTimeout(60000)
-
 beforeAll(async () => {
   process.env.JWT_KEY = 'super_secret_key_for_test'
 
